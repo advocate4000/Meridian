@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meridian Data | Strategic Data Partnerships</title>
+<meta name="description" content="Meridian Data connects law firms, investment companies and enterprise data owners with carefully structured, confidential AI data partnership opportunities.">
+<meta name="theme-color" content="#0c1724">
+<meta property="og:title" content="Meridian Data | Strategic Data Partnerships">
+<meta property="og:description" content="Unlocking the value of enterprise data for the AI economy.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/london-skyline.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+[hidden]{display:none!important}
+img{max-width:100%}
+/* Layout: navy bands for hero/headers and CTA, light stone bands for content; one shared 1200px column; hash-routed pages */
+:root{
+  --navy:#0c1724; --navy-2:#13233a; --navy-line:#24364f;
+  --gold:#b8955e; --gold-soft:#d8bd8c; --gold-deep:#8a6a3a;
+  --paper:#ffffff; --stone:#f5f2ec; --line:#e4ded3;
+  --ink:#141c27; --ink-2:#4a5464; --ink-3:#7a8392;
+  --on-navy:#eef0f3; --on-navy-2:#a9b3c1;
+  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-body:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+  --wrap:1200px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.on-navy .eyebrow{color:var(--gold-soft)}
+
+/* Header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navy);border-bottom:1px solid var(--navy-line);color:var(--on-navy)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--on-navy)}
+.brand svg{flex:none}
+.brand-name{font-family:var(--f-display);font-size:24px;letter-spacing:.12em;text-transform:uppercase;line-height:1}
+.brand-sub{display:block;font-family:var(--f-body);font-size:9.5px;letter-spacing:.32em;color:var(--on-navy-2);margin-top:6px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:14px;text-decoration:none;color:var(--on-navy);padding:6px 0;border-bottom:1.5px solid transparent;white-space:nowrap}
+.nav a:hover{color:var(--gold-soft)}
+.nav a[aria-current="page"]{border-bottom-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 15px/1 var(--f-body);text-decoration:none;padding:16px 28px;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-soft)}
+.btn-ghost{border-color:var(--on-navy-2);color:var(--on-navy);background:transparent}
+.btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft)}
+.btn-sm{padding:12px 20px;font-size:14px}
+.arrow{transition:transform .2s}
+.btn:hover .arrow,.more:hover .arrow{transform:translateX(3px)}
+.menu-btn{display:none;background:none;border:1px solid var(--navy-line);color:var(--on-navy);padding:9px 12px;border-radius:2px;font:500 13px var(--f-body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+@media (max-width:1060px){
+  .menu-btn{display:inline-block}
+  .head-cta{display:none}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);border-bottom:1px solid var(--navy-line);padding:8px max(16px,env(safe-area-inset-right,0px)) 20px max(16px,env(safe-area-inset-left,0px))}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--navy-line)}
+  .nav a[aria-current="page"]{color:var(--gold-soft);border-bottom-color:var(--navy-line)}
+  .site-head:not(.open) .nav{display:none}
+}
+@media (max-width:480px){.brand-name{font-size:19px}.brand-sub{font-size:8px;letter-spacing:.24em}}
+
+/* Hero */
+.hero{position:relative;background:var(--navy);color:var(--on-navy);overflow:hidden}
+.hero .photo{position:absolute;top:0;bottom:0;right:0;width:68%;background:#1a1c24 url(assets/london-skyline.jpg) 40% 55%/cover no-repeat}
+@media (max-width:860px){.hero .photo{width:100%;background-position:45% 50%}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(12,23,36,.92) 34%,rgba(12,23,36,.35) 62%,rgba(12,23,36,.1) 100%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;padding-block:88px 56px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,74px);line-height:1.04;max-width:13ch}
+.hero-lede{margin-top:24px;font-size:clamp(16px,1.6vw,18.5px);color:#d9dee5;max-width:52ch;line-height:1.55}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.pillars{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--on-navy-2)}
+.pillars span+span::before{content:"|";margin-right:22px;color:var(--gold-deep)}
+.hero-words{border-left:1px solid var(--gold);padding:8px 0 8px 26px;display:grid;gap:18px;font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#f3e7d2}
+@media (max-width:860px){.hero-words{display:none}.hero::after{background:linear-gradient(180deg,rgba(12,23,36,.55),var(--navy) 85%)}.hero-inner{grid-template-columns:1fr;padding-block:64px 44px}}
+
+/* Page header (inner pages) */
+.page-head{position:relative;background:var(--navy);color:var(--on-navy);overflow:hidden}
+.page-head .photo{position:absolute;top:0;bottom:0;right:0;width:60%;background:#1a1c24 url(assets/london-skyline.jpg) 50% 60%/cover no-repeat;opacity:.75}
+@media (max-width:860px){.page-head .photo{width:100%;opacity:.45}}
+.page-head::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 30%,rgba(12,23,36,.4))}
+.page-head .wrap{position:relative;z-index:1;padding-block:72px 64px}
+.page-head h1{font-size:clamp(36px,5vw,58px);line-height:1.08;margin-top:14px;max-width:18ch}
+.page-head p{margin-top:20px;color:#d2d8e0;font-size:18px;max-width:58ch}
+
+/* Sections */
+.band{padding-block:80px}
+.band-stone{background:var(--stone)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end}
+.split h2{font-size:clamp(32px,3.6vw,44px);line-height:1.12;margin-top:14px}
+.split p{color:var(--ink-2);font-size:17px;max-width:56ch}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px}
+@media (max-width:920px){.cards{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:0 14px 34px -18px rgba(12,23,36,.35);transform:translateY(-2px)}
+.card-img{height:112px;position:relative}
+.img-law{background:
+  repeating-linear-gradient(90deg,transparent 0 14px,rgba(60,40,20,.35) 14px 16px,transparent 16px 22px,rgba(255,240,215,.25) 22px 26px,transparent 26px 46px),
+  linear-gradient(180deg,#b79a74 0%,#9a7b56 18%,#c9b08d 22%,#a88a64 60%,#7d6040 100%)}
+.img-inv{background:
+  linear-gradient(115deg,transparent 0 30%,rgba(255,255,255,.18) 30% 31%,transparent 31%),
+  repeating-linear-gradient(90deg,#1b3550 0 18px,#2c4f72 18px 20px,#16304b 20px 40px,#3a6589 40px 41px),
+  linear-gradient(180deg,#9fb6cc,#284763)}
+.img-inv{background-blend-mode:screen,normal,multiply}
+.img-ent{background:
+  repeating-linear-gradient(0deg,transparent 0 16px,rgba(30,40,50,.35) 16px 17px),
+  repeating-linear-gradient(90deg,transparent 0 24px,rgba(30,40,50,.35) 24px 25px),
+  linear-gradient(120deg,#c7cfd6 0 45%,#8a7a62 45% 47%,#d8c3a0 47% 70%,#6f7d89 70%)}
+.card-icon{position:absolute;left:24px;bottom:-26px;width:56px;height:56px;border-radius:50%;background:var(--navy);display:grid;place-items:center;border:3px solid var(--paper)}
+.card-body{padding:42px 26px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:26px;line-height:1.2}
+.card p{color:var(--ink-2);font-size:15.5px}
+.more{margin-top:auto;padding-top:12px;font-size:14.5px;font-weight:600;color:var(--gold-deep);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.more:hover{color:var(--ink)}
+
+/* Process */
+.steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:start}
+.num{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--f-display);font-size:20px;color:var(--gold-deep);font-variant-numeric:tabular-nums;background:var(--paper)}
+.step h3{font-size:21px;line-height:1.25;padding-top:10px}
+.step p{margin-top:8px;color:var(--ink-2);font-size:14.5px}
+
+/* CTA band */
+.cta{position:relative;background:var(--navy);color:var(--on-navy);overflow:hidden}
+.cta svg.arcs{position:absolute;right:-60px;top:-40px;height:160%;opacity:.55;pointer-events:none}
+.cta .wrap{position:relative;padding-block:56px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.cta h2{font-size:clamp(30px,3.4vw,40px);margin-top:10px}
+.cta p{margin-top:8px;color:var(--on-navy-2)}
+
+/* Detail layouts */
+.detail{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px 64px;padding-block:56px;border-top:1px solid var(--line)}
+.detail:first-child{border-top:0;padding-top:0}
+@media (max-width:820px){.detail{grid-template-columns:1fr}}
+.detail-label h2{font-size:34px;line-height:1.15;margin-top:12px}
+.detail-body{display:grid;gap:20px;min-width:0}
+.detail-body>p{font-size:17.5px;color:var(--ink-2);max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:600px){.facts{grid-template-columns:1fr}}
+.fact{background:var(--stone);border:1px solid var(--line);border-radius:3px;padding:20px 22px}
+.fact h4{margin:0 0 8px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.fact ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:4px}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.tl{display:grid;grid-template-columns:64px minmax(0,1fr);gap:22px;position:relative;padding-bottom:44px}
+.tl:not(:last-child)::before{content:"";position:absolute;left:31px;top:64px;bottom:0;border-left:1px solid var(--gold)}
+.tl .num{width:64px;height:64px;font-size:24px}
+.tl h3{font-size:28px;padding-top:12px}
+.tl .who{margin-top:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.tl p{margin-top:12px;color:var(--ink-2);font-size:16.5px;max-width:62ch}
+.tl ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:15.5px;display:grid;gap:4px;max-width:62ch}
+
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px}
+@media (max-width:920px){.principles{grid-template-columns:1fr}}
+.principle{border-top:2px solid var(--gold);padding-top:22px}
+.principle h3{font-size:26px}
+.principle p{margin-top:10px;color:var(--ink-2)}
+.principle ul{margin:14px 0 0;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:6px}
+.never{background:var(--navy);color:var(--on-navy);border-radius:3px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px 48px}
+@media (max-width:820px){.never{grid-template-columns:1fr;padding:28px 22px}}
+.never h2{font-size:32px;margin-top:10px}
+.never ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.never li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;color:#d6dce4}
+.never li::before{content:"";width:10px;height:1px;background:var(--gold);margin-top:13px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:600px){form{grid-template-columns:1fr}}
+.field{display:grid;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-2)}
+input,select,textarea{font:16px var(--f-body);color:var(--ink);background:var(--paper);border:1px solid #cfc7b9;border-radius:2px;padding:13px 14px;width:100%}
+textarea{min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,149,94,.2)}
+.check{grid-column:1/-1;display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;align-items:start;font-size:14.5px;color:var(--ink-2)}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--navy)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.form-note{font-size:13.5px;color:var(--ink-3)}
+.btn-navy{background:var(--navy);color:var(--on-navy)}
+.btn-navy:hover{background:var(--navy-2)}
+.notice{grid-column:1/-1;border:1px solid var(--gold);background:#fbf6ec;padding:16px 18px;border-radius:2px;font-size:15px}
+.aside{display:grid;gap:22px;align-content:start}
+.aside-box{background:var(--stone);border:1px solid var(--line);border-radius:3px;padding:26px}
+.aside-box h3{font-size:22px}
+.aside-box p,.aside-box li{color:var(--ink-2);font-size:15px}
+.aside-box ol{margin:12px 0 0;padding-left:20px;display:grid;gap:8px}
+.aside-box p{margin-top:10px}
+
+/* Footer */
+.site-foot{background:#08111b;color:var(--on-navy-2);font-size:14px}
+.site-foot .wrap{padding-block:44px;display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:flex-start}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 26px}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{color:var(--gold-soft)}
+.foot-small{width:100%;border-top:1px solid #1b2a3d;padding-top:20px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+.page{animation:fade .45s ease both}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap head-row">
+    <a class="brand" href="#home" aria-label="Meridian Data home">
+      <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="17" fill="none" stroke="#b8955e" stroke-width="1.4"/><line x1="23" y1="1" x2="23" y2="45" stroke="#b8955e" stroke-width="1.4"/></svg>
+      <span><span class="brand-name">Meridian Data</span><span class="brand-sub">STRATEGIC DATA PARTNERSHIPS</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#who-we-work-with">Who We Work With</a>
+      <a href="#our-approach">Our Approach</a>
+      <a href="#responsible-data">Responsible Data</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold btn-sm head-cta" href="#contact">Get in Touch</a>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="page" data-page="home">
+  <div class="hero">
+    <div class="photo" role="img" aria-label="The City of London skyline at dusk, seen across the Thames"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <h1>Unlocking the value of enterprise data for the AI economy.</h1>
+        <p class="hero-lede">Meridian Data connects forward-thinking organisations with opportunities to explore the commercial potential of their proprietary business data through carefully structured AI data partnerships.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="#contact">Explore a Partnership <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#our-approach">Learn More</a>
+        </div>
+        <div class="pillars"><span>Confidential</span><span>Commercial</span><span>Responsible</span><span>Global</span></div>
+      </div>
+      <div class="hero-words" aria-hidden="true"><span>Data</span><span>Partnerships</span><span>People</span><span>Opportunity</span></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="split">
+        <div><p class="eyebrow">Who we work with</p><h2>Supporting organisations with valuable data assets.</h2></div>
+        <p>We work with law firms, investment companies and other enterprise organisations to identify potential AI data partnership opportunities, with a focus on responsible use, data governance and long-term value.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-img img-law"><span class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d8bd8c" stroke-width="1.4" aria-hidden="true"><path d="M12 3v17M7 20h10M4 7h16M6 7l-3 6a3 3 0 0 0 6 0L6 7M18 7l-3 6a3 3 0 0 0 6 0l-3-6"/></svg></span></div>
+          <div class="card-body"><h3>Law Firms</h3><p>Explore potential opportunities involving eligible legal records, historical case materials and structured legal information.</p><a class="more" href="#who-we-work-with">Learn more <span class="arrow">→</span></a></div>
+        </article>
+        <article class="card">
+          <div class="card-img img-inv"><span class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d8bd8c" stroke-width="1.4" aria-hidden="true"><path d="M4 20h16M6 20v-5M10 20v-8M14 20v-6M18 20V6"/></svg></span></div>
+          <div class="card-body"><h3>Investment Companies</h3><p>Identify potential opportunities involving research archives, investment workflows and historical business records.</p><a class="more" href="#who-we-work-with">Learn more <span class="arrow">→</span></a></div>
+        </article>
+        <article class="card">
+          <div class="card-img img-ent"><span class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d8bd8c" stroke-width="1.4" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg></span></div>
+          <div class="card-body"><h3>Enterprise Data Owners</h3><p>Connect with opportunities to explore the commercial potential of a wide range of proprietary business data.</p><a class="more" href="#who-we-work-with">Learn more <span class="arrow">→</span></a></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="band band-stone">
+    <div class="wrap">
+      <div class="split">
+        <div><p class="eyebrow">Our approach</p><h2>A clear and discreet process.</h2></div>
+        <p>We take a considered, confidential and commercially focused approach to every opportunity, working closely with organisational decision-makers at each stage.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="num">01</span><div><h3>Initial conversation</h3><p>We learn about your organisation, data assets and objectives.</p></div></li>
+        <li class="step"><span class="num">02</span><div><h3>Preliminary qualification</h3><p>We establish whether the opportunity warrants further discussion.</p></div></li>
+        <li class="step"><span class="num">03</span><div><h3>Introduction</h3><p>With your permission, we introduce suitable prospects to the relevant AI partner.</p></div></li>
+        <li class="step"><span class="num">04</span><div><h3>Commercial evaluation</h3><p>The parties independently assess the data, applicable permissions and potential next steps.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div class="split">
+        <div><p class="eyebrow">Responsible data</p><h2>Permission comes before opportunity.</h2></div>
+        <div style="display:grid;gap:20px;justify-items:start">
+          <p>Nothing leaves your organisation on our account. We work on descriptions of data, not the data itself, and every introduction depends on your rights to the material, your clients' interests and your own governance standards.</p>
+          <a class="more" href="#responsible-data" style="padding-top:0">How we handle confidentiality and permissions <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="page" data-page="who-we-work-with" hidden>
+  <div class="page-head on-navy">
+    <div class="photo" aria-hidden="true"></div>
+    <div class="wrap"><p class="eyebrow">Who we work with</p><h1>Organisations whose records hold long-term value.</h1><p>Our clients have accumulated years of carefully produced material. We help their leadership understand whether any of it could support an AI data partnership, and on what terms.</p></div>
+  </div>
+  <div class="band"><div class="wrap">
+    <div class="detail">
+      <div class="detail-label"><p class="eyebrow">Sector 01</p><h2>Law Firms</h2></div>
+      <div class="detail-body">
+        <p>Legal work produces some of the most carefully reasoned text in any profession. Where a firm holds material it has the right to use, and where client confidentiality and privilege can be fully protected, that material may be of interest to developers of legal AI.</p>
+        <div class="facts">
+          <div class="fact"><h4>Material we discuss</h4><ul><li>Firm-authored precedents and template libraries</li><li>Historical case materials cleared for use</li><li>Know-how notes and practice guides</li><li>Structured matter and clause data</li></ul></div>
+          <div class="fact"><h4>What we look at first</h4><ul><li>Ownership and client consent position</li><li>Privilege and confidentiality exposure</li><li>Anonymisation feasibility</li><li>Partnership and risk committee appetite</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="detail-label"><p class="eyebrow">Sector 02</p><h2>Investment Companies</h2></div>
+      <div class="detail-body">
+        <p>Asset managers, research houses and advisory firms hold deep archives of analysis and decision records. Historical research and workflow data can help AI developers build tools that reason about markets and businesses.</p>
+        <div class="facts">
+          <div class="fact"><h4>Material we discuss</h4><ul><li>Historical research archives</li><li>Investment memos and committee papers</li><li>Due diligence workflows and checklists</li><li>Long-run business and sector records</li></ul></div>
+          <div class="fact"><h4>What we look at first</h4><ul><li>Third-party data licence restrictions</li><li>Market-sensitive or non-public content</li><li>Age and relevance of the material</li><li>Compliance function sign-off</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="detail-label"><p class="eyebrow">Sector 03</p><h2>Enterprise Data Owners</h2></div>
+      <div class="detail-body">
+        <p>Beyond law and finance, many organisations hold specialist data sets built over decades: technical documentation, operational records and domain expertise. We help data owners explore whether this material has a responsible commercial use.</p>
+        <div class="facts">
+          <div class="fact"><h4>Material we discuss</h4><ul><li>Technical and engineering documentation</li><li>Operational and process records</li><li>Specialist reference and training content</li><li>Structured proprietary data sets</li></ul></div>
+          <div class="fact"><h4>What we look at first</h4><ul><li>Clear ownership of the data</li><li>Personal data within the set</li><li>Commercial sensitivity to competitors</li><li>Board and data owner sponsorship</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- OUR APPROACH -->
+<section class="page" data-page="our-approach" hidden>
+  <div class="page-head on-navy">
+    <div class="photo" aria-hidden="true"></div>
+    <div class="wrap"><p class="eyebrow">Our approach</p><h1>Qualification, introduction, evaluation.</h1><p>A four-stage process designed so that you stay in control. Each stage needs your agreement before the next one begins, and you can stop at any point.</p></div>
+  </div>
+  <div class="band"><div class="wrap" style="display:grid;grid-template-columns:minmax(0,1fr);max-width:960px">
+    <ol class="timeline">
+      <li class="tl"><span class="num">01</span><div><h3>Initial conversation</h3><p class="who">You and Meridian Data</p><p>A confidential discussion with a senior decision-maker. We learn about your organisation, the kinds of data you hold and what you would want from a partnership. We do not ask for any data at this stage.</p></div></li>
+      <li class="tl"><span class="num">02</span><div><h3>Preliminary qualification</h3><p class="who">Meridian Data, with your input</p><p>We work through a short set of questions to decide whether the opportunity warrants further discussion.</p><ul><li>Do you own or have the right to license the material?</li><li>Are client, third-party or personal data interests involved?</li><li>Is the material of a type and volume AI developers seek?</li><li>Is there internal sponsorship to take it further?</li></ul><p>If the answer is no, we say so plainly.</p></div></li>
+      <li class="tl"><span class="num">03</span><div><h3>Introduction</h3><p class="who">With your written permission</p><p>Where the opportunity qualifies, and only with your permission, we introduce your organisation to a suitable AI partner. Introductions are made on a descriptive basis, under confidentiality terms, and without disclosing the underlying data.</p></div></li>
+      <li class="tl"><span class="num">04</span><div><h3>Commercial evaluation</h3><p class="who">You and the AI partner, independently</p><p>The parties assess the data, the applicable permissions and potential next steps directly with each other, supported by their own legal and technical advisers. Any agreement is between you and the partner.</p></div></li>
+    </ol>
+  </div></div>
+  <div class="band band-stone"><div class="wrap">
+    <div class="split" style="align-items:start">
+      <div><p class="eyebrow">Our role</p><h2>We make the introduction. You make the decision.</h2></div>
+      <p>Meridian Data acts as an intermediary. We do not take custody of client data, we do not negotiate on your behalf without instruction, and we do not replace your legal, compliance or information security advisers. Our job is to identify credible opportunities and put the right people in the room.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- RESPONSIBLE DATA -->
+<section class="page" data-page="responsible-data" hidden>
+  <div class="page-head on-navy">
+    <div class="photo" aria-hidden="true"></div>
+    <div class="wrap"><p class="eyebrow">Responsible data</p><h1>Confidentiality, permissions and governance.</h1><p>Data partnerships only work when every party can stand behind them. These are the standards we apply before any opportunity moves forward.</p></div>
+  </div>
+  <div class="band"><div class="wrap">
+    <div class="principles">
+      <div class="principle"><h3>Confidentiality</h3><p>Every conversation with us is treated as confidential from the outset.</p><ul><li>Mutual confidentiality terms before any detailed discussion</li><li>Your identity is not shared with prospective partners without consent</li><li>We work from descriptions of data, never the data itself</li><li>Need-to-know access within our team</li></ul></div>
+      <div class="principle"><h3>Permissions</h3><p>An opportunity only exists where the right to use the material is clear.</p><ul><li>Ownership and licensing rights confirmed early</li><li>Client, customer and third-party interests identified</li><li>Professional duties, including legal professional privilege, respected</li><li>Lawful basis for any personal data assessed under UK GDPR and the Data Protection Act 2018</li></ul></div>
+      <div class="principle"><h3>Governance</h3><p>Partnerships should fit within your existing governance, not work around it.</p><ul><li>Your risk, compliance and data protection functions involved</li><li>Anonymisation and data minimisation considered first</li><li>Clear limits on how a partner may use the data</li><li>Documented decisions at each stage</li></ul></div>
+    </div>
+  </div></div>
+  <div class="band band-stone"><div class="wrap">
+    <div class="never">
+      <div><p class="eyebrow">Our boundaries</p><h2>What we will not do.</h2></div>
+      <ul>
+        <li>Introduce an opportunity where the data owner cannot show the right to use the material.</li>
+        <li>Receive, store or transfer client data on anyone's behalf.</li>
+        <li>Share your organisation's name with a prospective partner before you agree.</li>
+        <li>Encourage the disclosure of privileged or confidential client information.</li>
+        <li>Give legal advice. We recommend that every party takes independent legal advice before any agreement.</li>
+      </ul>
+    </div>
+  </div></div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" data-page="contact" hidden>
+  <div class="page-head on-navy">
+    <div class="photo" aria-hidden="true"></div>
+    <div class="wrap"><p class="eyebrow">Contact</p><h1>Confidential partnership enquiries.</h1><p>Tell us a little about your organisation and the data you hold. A senior member of our team will respond to arrange an initial conversation.</p></div>
+  </div>
+  <div class="band"><div class="wrap contact-grid">
+    <form id="enquiry" novalidate>
+      <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-role">Role</label><input id="f-role" name="role" autocomplete="organization-title" placeholder="e.g. Managing Partner"></div>
+      <div class="field"><label for="f-org">Organisation</label><input id="f-org" name="org" autocomplete="organization" required></div>
+      <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field full"><label for="f-sector">Sector</label>
+        <select id="f-sector" name="sector"><option>Law firm</option><option>Investment company</option><option>Enterprise data owner</option><option>AI developer seeking data partners</option><option>Other</option></select></div>
+      <div class="field full"><label for="f-msg">About your data</label><textarea id="f-msg" name="message" placeholder="Describe the type of material in general terms. Please do not include confidential client information."></textarea></div>
+      <label class="check" for="f-consent"><input id="f-consent" type="checkbox" required><span>I am authorised to make this enquiry on behalf of my organisation, and I understand Meridian Data will treat it as confidential.</span></label>
+      <div class="form-foot"><button class="btn btn-navy" type="submit">Send enquiry <span class="arrow">→</span></button><span class="form-note">We reply within two working days.</span></div>
+      <div class="notice" id="formMsg" role="status" hidden></div>
+    </form>
+    <aside class="aside">
+      <div class="aside-box"><h3>What happens next</h3><ol><li>We review your enquiry in confidence.</li><li>We arrange a call with you at a time that suits.</li><li>If there is a fit, we explain the qualification stage before anything else happens.</li></ol></div>
+      <div class="aside-box"><h3>Before you write</h3><p>Describe your data in general terms only. We never need samples, client names or personal data at the enquiry stage.</p></div>
+      <div class="aside-box"><h3>Location</h3><p>London, United Kingdom. We work with organisations internationally.</p></div>
+    </aside>
+  </div></div>
+</section>
+</main>
+
+<section class="cta on-navy" id="ctaBand">
+  <svg class="arcs" viewBox="0 0 600 400" aria-hidden="true"><g fill="none" stroke="#b8955e" stroke-width="1"><circle cx="420" cy="420" r="300"/><circle cx="160" cy="460" r="320"/></g></svg>
+  <div class="wrap">
+    <div><p class="eyebrow">Strategic opportunity</p><h2>Explore a data partnership.</h2><p>Contact us for a confidential, no-obligation discussion.</p></div>
+    <a class="btn btn-gold" href="#contact">Get in Touch <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Meridian Data home">
+      <svg width="36" height="36" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="17" fill="none" stroke="#b8955e" stroke-width="1.6"/><line x1="23" y1="1" x2="23" y2="45" stroke="#b8955e" stroke-width="1.6"/></svg>
+      <span><span class="brand-name" style="font-size:19px">Meridian Data</span><span class="brand-sub">STRATEGIC DATA PARTNERSHIPS</span></span>
+    </a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#who-we-work-with">Who We Work With</a><a href="#our-approach">Our Approach</a><a href="#responsible-data">Responsible Data</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="foot-small"><span>© 2026 Meridian Data. London, United Kingdom.</span><span>Meridian Data does not provide legal advice.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('[data-page]'));
+  var links=[].slice.call(document.querySelectorAll('#nav a'));
+  var head=document.getElementById('siteHead'), menu=document.getElementById('menuBtn');
+  var cta=document.getElementById('ctaBand');
+
+  function route(){
+    var id=(location.hash||'#home').slice(1);
+    if(!pages.some(function(p){return p.dataset.page===id})) id='home';
+    pages.forEach(function(p){p.hidden=p.dataset.page!==id});
+    links.forEach(function(a){ if(a.getAttribute('href')==='#'+id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    cta.hidden=(id==='contact');
+    head.classList.remove('open'); menu.setAttribute('aria-expanded','false');
+    window.scrollTo(0,0);
+  }
+  menu.addEventListener('click',function(){var o=head.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+  window.addEventListener('hashchange',route);
+
+
+  // Enquiry form (not yet connected to a mailbox)
+  var f=document.getElementById('enquiry'),msg=document.getElementById('formMsg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(el){return el.type==='checkbox'?!el.checked:!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value))});
+    msg.hidden=false;
+    if(bad.length){msg.textContent='Please complete your name, organisation, a valid work email and the authorisation box before sending.';bad[0].focus();return}
+    msg.textContent='Thank you, '+f.elements.name.value.trim()+'. This preview form is not yet connected, so your enquiry has not been sent.';
+  });
+
+  route();
+})();
+</script>
+
+</body>
+</html>
