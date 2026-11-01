@@ -24,5 +24,4 @@ Fonts load from Google Fonts; everything else is local.
    and the footer.
 3. **Legal pages** – add a privacy notice and cookie statement if required, and your
    company registration details in the footer.
-4. **Image** – replace `assets/london-skyline.jpg` with a full-resolution licensed photo
-   (keep the filename) for a sharper result on large screens.
+4. **Image** – `assets/london-skyline.jpg` is the hero and header photo. Replace it, keeping the filename, to change it.
